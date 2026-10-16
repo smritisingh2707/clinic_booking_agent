@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Monday — clinic booking demo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header><a href="/" class="brand"><span class="mark">m.</span> monday</a><span class="tag">Mock clinic · local demo</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">A SMALL VOICE AGENT EXPERIMENT</p>
+      <h1>Friday? Actually,<br><em>make that Monday.</em></h1>
+      <p>Change your mind. Check an actual mock clinic schedule. Confirm once.</p>
+    </section>
+    <div class="layout">
+      <section class="chat card">
+        <div class="cardhead"><div><h2>Book a dermatologist</h2><p>Fictional doctors and availability · Asia/Kolkata</p></div><button id="newSession" class="quiet">New session</button></div>
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <div class="examples"><button data-example="Book me a dermatologist appointment Friday... actually, make that Monday.">Friday → Monday</button><button data-example="Actually, make that Friday.">Change again</button><button data-example="yes">Confirm</button></div>
+        <form id="chatForm"><label for="input" class="sr">Your message</label><textarea id="input" rows="2" placeholder="Book me a dermatologist appointment Friday… actually Monday."></textarea><div class="controls"><button type="button" id="mic" class="quiet">Connect voice</button><button type="button" id="mute" class="quiet" disabled>Mute</button><button type="button" id="enableAudio" class="quiet" hidden>Enable audio</button><button id="send" type="submit" class="primary">Send →</button></div></form>
+        <p id="micStatus" class="note">Type locally, or connect your microphone to the LiveKit streaming agent.</p>
+      </section>
+      <aside>
+        <section class="card statecard"><p class="eyebrow">THE CURRENT REQUEST</p><h2 id="requestDate">Choose a day</h2><div id="offer" class="offer">No slot is offered yet.</div><div class="counter"><strong id="count">0</strong><span>bookings in this session</span></div><div id="booking" class="booking"></div><p class="note">No booking is created until you confirm the current offer. A new session represents a separate demo patient.</p></section>
+        <section class="card tracecard"><h2>What happened</h2><p class="note">An audit trail from the backend.</p><ol id="trace"></ol></section>
+        <section class="card voicecard"><h2>Voice session</h2><p id="voiceState" class="note">Disconnected</p><div class="metricrow"><span>Server response</span><strong id="responseLatency">—</strong></div><div class="metricrow"><span>Server interruption</span><strong id="interruptionLatency">—</strong></div><div class="metricrow"><span>Spoken offer</span><strong id="spokenOffer">Awaiting offer</strong></div><p class="note">Timings come from agent state events. They exclude browser playback delay.</p><button id="exportVoice" class="quiet">Download voice trace</button></section>
+      </aside>
+    </div>
+  </main>
+  <footer>Text mode runs locally. Voice mode streams microphone audio and agent speech through LiveKit WebRTC. Use fictional patient data.</footer>
+  <div id="agentAudio" hidden></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

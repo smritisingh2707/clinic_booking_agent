@@ -1,0 +1,56 @@
+{
+  "project_version": "0.3.0",
+  "python_tests": {
+    "passed": 66,
+    "failed": 0,
+    "skipped": 0
+  },
+  "javascript_tests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "browser_checks": {
+    "passed": 7,
+    "page_errors": [],
+    "checks": [
+      "Local correction and confirmation journey",
+      "Reload keeps booking reference",
+      "Real bundled SDK reports missing credentials explicitly",
+      "Mobile layout fits 390px",
+      "Requested 10 AM appears in offer and booking",
+      "Date clarification preserves proposal and revision",
+      "Unavailable 11 AM does not substitute an offer"
+    ],
+    "last_run_version": "0.3.0"
+  },
+  "sdk_integration": {
+    "livekit_agents": "1.8.7",
+    "livekit_client": "2.22.4",
+    "real_sdk_tested": [
+      "AgentSession and tool scheduler",
+      "TTS PCM frames and controlled output-device completion",
+      "SpeechHandle interruption clears buffered audio"
+    ],
+    "providers": "Deterministic fixtures",
+    "input": "Committed transcript hook invoked explicitly; physical microphone not exercised"
+  },
+  "live_cloud_voice": "Not run: authenticated LiveKit API succeeded, but agent startup was blocked by automatic approval review of unrelated Microsoft telemetry with unknown payload.",
+  "live_latency_samples": 0,
+  "browser_webrtc_room_connected": false,
+  "clarification_regression": "Passed: completed Monday 10 AM offer, date/time clarification, yes, exactly one booking",
+  "latency_report": "Percentile and unit-conversion tests passed; live measurements remain absent",
+  "livekit_api_connectivity": "Authenticated read-only room listing succeeded through the configured network proxy.",
+  "credential_hygiene": "All .env variants excluded except placeholder .env.example; actual configured key and secret absent from shareable files.",
+  "review_reproductions": [
+    "Fixed: Monday at 10 AM offers and books 10 AM",
+    "Fixed: Is that Monday? preserves revision, proposal and playout eligibility"
+  ],
+  "typed_demo": {
+    "path": "docs/typed_walkthrough.mp4",
+    "input": "Automated typed browser input",
+    "microphone_audio": false,
+    "live_provider_audio": false,
+    "real_http_and_database": true
+  },
+  "model_backed_conversation_evaluation": "Not run; SDK tests use deterministic model fixtures."
+}
